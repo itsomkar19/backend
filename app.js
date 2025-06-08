@@ -25,14 +25,6 @@ app.use(cookieParser());
 app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
-  const apiKey = req.get('x-api-key');
-
-  if (!apiKey) {
-    return res.status(401).json({ message: 'API key missing' });
-  }
-
-  // Use the apiKey for further processing, like authentication
-  res.json({ message: 'API key received', apiKey });
   res.json({ message: "SERVER IS RUNNING. Try /api/v1/test" });
 });
 
